@@ -1,4 +1,4 @@
-#main.py
+#main
 
 from dbUtilitiesPackage.dbUtilities import *
 
