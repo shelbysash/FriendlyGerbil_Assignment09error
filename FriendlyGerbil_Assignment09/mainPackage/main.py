@@ -18,6 +18,7 @@ except Exception as e:
     exit()  #given up. how do i get out of this module 
 
 
+master
 #step 1    
 query_string = "SELECT ProductID, [UPC-A ], Description, ManufacturerID, BrandID FROM tProduct"
 #print(query_string)
@@ -31,3 +32,9 @@ productID = selectedProduct.ProductID
 description = selectedProduct.Description
 manufacturerID = selectedProduct.ManufacturerID
 brandID = selectedProduct.BrandID
+=======
+    #step 3 & step 4
+query_manufacturer = f"SELECT Manufacturer FROM tManufacturer WHERE ManufacturerID = {manufacturerID}"
+cursor.execute(query_manufacturer)
+manufacturer = cursor.fetchone().Manufacturer
+master
