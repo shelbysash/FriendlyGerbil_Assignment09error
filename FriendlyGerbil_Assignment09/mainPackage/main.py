@@ -13,3 +13,9 @@ except Exception as e:
     print("error accessing database")
     print(e) 
     exit()  #given up. how do i get out of this module 
+
+
+    #step 3 & step 4
+query_manufacturer = f"SELECT Manufacturer FROM tManufacturer WHERE ManufacturerID = {manufacturerID}"
+cursor.execute(query_manufacturer)
+manufacturer = cursor.fetchone().Manufacturer
