@@ -3,6 +3,9 @@
 from dbUtilitiesPackage.dbUtilities import *
 
 import pyodbc
+
+
+
 try:
     conn= connect_to_database() 
     # Submit a query to the SQL Server instance and store the results in the cursor object
@@ -15,7 +18,23 @@ except Exception as e:
     exit()  #given up. how do i get out of this module 
 
 
+master
+#step 1    
+query_string = "SELECT ProductID, [UPC-A ], Description, ManufacturerID, BrandID FROM tProduct"
+#print(query_string)
+#Submit the query to out db server and store the results in a variable
+results = cursor.execute(query_string)
+products = cursor.fetchall()  #maybe ?
+
+#step 2
+selectedProduct = random.choice(products)
+productID = selectedProduct.ProductID
+description = selectedProduct.Description
+manufacturerID = selectedProduct.ManufacturerID
+brandID = selectedProduct.BrandID
+=======
     #step 3 & step 4
 query_manufacturer = f"SELECT Manufacturer FROM tManufacturer WHERE ManufacturerID = {manufacturerID}"
 cursor.execute(query_manufacturer)
 manufacturer = cursor.fetchone().Manufacturer
+master
